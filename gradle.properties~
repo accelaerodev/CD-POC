@@ -1,0 +1,42 @@
+projectVersion=1.0.0-SNAPSHOT
+releaseVersion=1.0.0
+projectGroup=com.isa.commons
+#Uncomment this for snapshot build
+#isaFetchURL=http://artifactory.cmb.isaaviations.com/artifactory/all-snapshots/
+#isaPublisURL=http://artifactory.cmb.isaaviations.com/artifactory/isa-snapshots/
+#Uncomment this for release build
+isaFetchURL=http://artifactory.cmb.isaaviations.com/artifactory/all-readonly/
+isaPublisURL=http://artifactory.cmb.isaaviations.com/artifactory/isa-releases/
+isaPublishUsername=
+isaPublishPassword=
+systemProp.http.proxyHost=
+systemProp.http.proxyPort=80
+
+//component versions
+cloudComponentsVersion=1.9.2
+solverVersion=1.0.2-SNAPSHOT
+springVersion=3.2.4.RELEASE
+springDataCouchbaseVersion=1.0.0.RC1
+testngVersion=6.8.5
+mokitoVersion=1.9.5
+hessainVersion=4.0.33
+jacksonVersion=1.9.12
+commonsDbcpVersion=1.4
+derbyVersion=10.10.1.1
+slfjVersion=1.7.5
+logjVersion=1.2.17
+powerMockVersion=1.5.2
+powerMockTestNGVersion=1.4.10
+hibernateJPAAnnotationVersion=1.0.0.Final
+hibernateVersion=4.1.9.Final
+apacheCommonsLangVersion=3.3
+apacheCommonsCodecVersion=1.9
+apacheHttpComponentsVersion=4.3.1
+apacheHttpFluentHCVersion=4.3.1
+apacheBeanUtilsVersion=1.9.1
+oracleDriverVersion = 11.1.0.7.0
+modelMapperVersion = 0.6.5
+velocityVersion=1.7
+jodaTimeVersion=2.3
+gsonVersion = 2.2.4
+javaMailVersion=1.4.1
