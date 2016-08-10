@@ -11,5 +11,7 @@ gradle build buildDocker
 To run the docker image
 docker run -p 8082:8080 -t accelaero/gs-spring-boot-docker
 
+end
+
 
 
