@@ -1,4 +1,4 @@
-# CD-POC
+# Example ACCELaero Continous Delivery
 
 Spring Boot Application to be used to demonstrate Continuous Delivery
 
