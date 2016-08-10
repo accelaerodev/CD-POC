@@ -22,7 +22,7 @@ apply plugin: 'docker'
 group = 'accelaero'
 
 jar {
-    baseName = 'gs-spring-boot-docker'
+    baseName = 'example-continuous-delivery'
     version =  '0.1.0'
 }
 
