@@ -5,6 +5,10 @@ node {
    stage 'Build'
    sh "./gradlew build"
    
-   stage 'Docker'
+   stage 'Docker Image'
    sh "./gradlew buildDocker"
+
+   stage 'Push to Registry'
+   sh "docker tag accelaerodev/example-continuous-delivery localhost:5002/example-continuous-delivery:latest"
+   sh "docker push localhost:5002/example-continuous-delivery:latest"
 }
