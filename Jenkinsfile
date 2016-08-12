@@ -2,8 +2,11 @@ node {
    stage 'Checkout'
    git url: 'https://github.com/accelaerodev/example-continuous-delivery.git'
 
-   stage 'Build'
-   sh "./gradlew build"
+   stage 'Compile Source'
+   sh "./gradlew assemble"
+
+   stage 'Unit Test'
+   sh "./gradlew test"
    
    stage 'Docker Image'
    sh "./gradlew buildDocker"
