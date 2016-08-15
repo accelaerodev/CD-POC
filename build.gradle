@@ -16,6 +16,7 @@ apply plugin: 'idea'
 apply plugin: 'spring-boot'
 // tag::plugin[]
 apply plugin: 'docker'
+apply plugin: 'pmd'
 // end::plugin[]
 
 // This is used as the docker image prefix (org)
@@ -65,7 +66,7 @@ sourceSets {
         // somehow this redeclaration is needed, but should be irrelevant
         // since runtimeClasspath always expands compileClasspath
         runtimeClasspath += sourceSets.test.runtimeClasspath
-    }
+    }    
 }
 
 task integrationTest(type: Test) {
@@ -73,3 +74,19 @@ task integrationTest(type: Test) {
     testClassesDir = sourceSets.integrationTest.output.classesDir
     classpath += sourceSets.integrationTest.runtimeClasspath
 }
+
+pmd { // code quality plugin
+    ruleSets = [
+           // 'java-basic'
+            'java-braces',
+           // 'java-clone',
+           // 'java-codesize',
+           // 'java-comments',
+          //  'java-controversial',
+          //  'java-coupling',
+          //  'java-design',
+          //  'java-empty',
+          //  'java-finalizers'
+            ]
+} 
+

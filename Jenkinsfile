@@ -2,6 +2,9 @@ node {
    stage 'Checkout'
    git url: 'https://github.com/accelaerodev/example-continuous-delivery.git'
 
+   stage 'Code Quality'
+   sh "./gradlew pmdMain pmdTest pmdIntegrationTest"
+
    stage 'Compile Source'
    sh "./gradlew assemble"
 
