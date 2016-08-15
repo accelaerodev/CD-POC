@@ -5,8 +5,11 @@ node {
    stage 'Compile Source'
    sh "./gradlew assemble"
 
-   stage 'Unit Test'
+   stage 'Unit Tests'
    sh "./gradlew test"
+ 
+   stage 'Integration Tests'
+   sh "./gradlew integrationTest"
    
    stage 'Docker Image'
    sh "./gradlew buildDocker"
