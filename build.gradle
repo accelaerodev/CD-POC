@@ -55,3 +55,21 @@ dependencies {
 task wrapper(type: Wrapper) {
     gradleVersion = '2.3'
 }
+
+sourceSets {
+    integrationTest {
+        java {
+            srcDir 'src/IntegTest/java'
+        }
+        compileClasspath += sourceSets.test.runtimeClasspath
+        // somehow this redeclaration is needed, but should be irrelevant
+        // since runtimeClasspath always expands compileClasspath
+        runtimeClasspath += sourceSets.test.runtimeClasspath
+    }
+}
+
+task integrationTest(type: Test) {
+    description = "Running Integration Tests"
+    testClassesDir = sourceSets.integrationTest.output.classesDir
+    classpath += sourceSets.integrationTest.runtimeClasspath
+}
