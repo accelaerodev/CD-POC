@@ -17,6 +17,7 @@ apply plugin: 'spring-boot'
 // tag::plugin[]
 apply plugin: 'docker'
 apply plugin: 'pmd'
+apply plugin: 'com.zoltu.git-versioning'
 // end::plugin[]
 
 // This is used as the docker image prefix (org)
@@ -24,7 +25,6 @@ group = 'accelaero'
 
 jar {
     baseName = 'example-continuous-delivery'
-    version =  '0.1.0'
 }
 
 // tag::task[]
@@ -89,4 +89,15 @@ pmd { // code quality plugin
           //  'java-finalizers'
             ]
 } 
+
+buildscript {
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath "gradle.plugin.com.zoltu.gradle.plugin:git-versioning:2.0.20"
+  }
+}
 
