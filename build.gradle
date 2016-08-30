@@ -1,9 +1,14 @@
 buildscript {
     repositories {
         mavenCentral()
+    maven {
+           url "https://plugins.gradle.org/m2/"
+        }
     }
+    
     dependencies {
         classpath('org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE')
+classpath "net.saliman:gradle-cobertura-plugin:2.3.2"
 // tag::build[]
         classpath('se.transmode.gradle:gradle-docker:1.2')
 // end::build[]
@@ -18,7 +23,16 @@ apply plugin: 'spring-boot'
 apply plugin: 'docker'
 apply plugin: 'pmd'
 apply plugin: 'com.zoltu.git-versioning'
+apply plugin: "net.saliman.cobertura"
 // end::plugin[]
+
+cobertura {
+    coverageFormats = ['html', 'xml']				
+    coverageIgnoreTrivial = true					
+    coverageIgnores = ['org.slf4j.Logger.*']			
+    coverageReportDir = new File("$buildDir/reports/cobertura")	
+}
+
 
 // This is used as the docker image prefix (org)
 group = 'accelaero'
