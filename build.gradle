@@ -24,7 +24,21 @@ apply plugin: 'docker'
 apply plugin: 'pmd'
 apply plugin: 'com.zoltu.git-versioning'
 apply plugin: "net.saliman.cobertura"
+apply plugin: "jacoco"
 // end::plugin[]
+
+jacocoTestReport{
+    additionalSourceDirs = files(sourceSets.main.allJava.srcDirs)
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination "${buildDir}/reports/jacoco/html"
+    }
+    executionData = files('build/jacoco/test.exec')
+}
+
+test { finalizedBy jacocoTestReport }
+
 
 cobertura {
     coverageFormats = ['html', 'xml']				
